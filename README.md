@@ -45,6 +45,6 @@ for managing online grocery shopping, built as a part of a college project. The 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/grocery-shopping-system.git
+   git clone https://github.com/grocery-shopping-system.git
    cd grocery-shopping-system
 http://localhost/grocery/index.html
