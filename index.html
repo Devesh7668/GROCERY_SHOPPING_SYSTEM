@@ -1,0 +1,598 @@
+<!doctype html>
+<html>
+<head>
+	<title>Grocery store by Dev</title>
+	<link rel="icon" type="image/icon" href="image\cart_2568061.png" alt="Cart Image">
+<!--code for font awesome cdn  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--code for font awesome cdn  -->
+
+<!--code for linking css file  -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+
+<style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 25rem;
+      height: 25rem;
+      object-fit: cover;
+    }
+	.stars {
+color: orange;
+	}
+
+  </style>
+
+</head>
+<body>
+	
+
+<!--header section  -->
+<header class="header">
+	  <a href="#" class="logo"> <i class="fa fa-shopping-basket" aria-hidden="true"> grocery</i> </a>
+<nav class="#navbar"> 
+<a href="#home">home</a>
+<a href="#features">features</a>
+<a href="#products">products</a>
+<a href="#categories">categories</a>
+<a href="#order">order</a>
+<a href="#review">review</a>
+<a href="#blogs">blogs</a>
+</nav>
+
+<div class="icons">
+	<div class="fa fa-bars" id="menu-btn"></div>
+	<div class="fa fa-search" id="search-btn"></div>
+	<div class="fa fa-shopping-cart" id="cart-btn"></div>
+	<div class="fa fa-user" id="login-btn"></div>
+	
+</div>
+
+<form class="search-form">
+	<input type="search" id="search-box" name="" placeholder="search here....">
+	<label for="search-box" class="fa fa-search"></label>
+	<script>
+		// Search box input event
+		document.getElementById("search-box").addEventListener("input", function () {
+		  let filter = this.value.toLowerCase();
+		  let products = document.querySelectorAll(".swiper-slide");
+	  
+		  products.forEach(function (product) {
+			let productName = product.querySelector("h1").innerText.toLowerCase();
+	  
+			if (productName.includes(filter)) {
+			  product.style.display = "flex"; // or "block"
+			} else {
+			  product.style.display = "none";
+			}
+		  });
+		});
+	  </script>
+	  
+</form>
+
+	<div class="shopping-cart" id="cart-container">
+	<!-- Items will be added here dynamically -->
+	<div class="total">Total: ₹0</div>
+	<a href="#" class="btn">Checkout</a>
+	</div>
+
+	<form class="login-form" method="POST" action="login.php">
+		<h3>Login Now</h3>    
+		<input type="email" name="Email" placeholder="Your email" class="box" required>
+		<input type="password" name="Password" placeholder="Your password" class="box" required>
+		<p>Forget your password <a href="#">Click here</a></p>
+		<p>Don't have an account <a href="#">Create now</a></p>
+		<input type="submit" value="submit" class="btn"> 
+	</form>
+	
+
+</header>
+<!--header section  -->
+
+<!--banner section  -->
+<section class="home" id="home">
+	<div class="content">
+		<h3>fresh and <span>organic</span> product for you</h3>
+		<p>this website is designed by Dev. for the purpose of college project</p>
+        <a href="#" class="btn">shop now</a>
+	</div>
+</section>	
+<!--banner section  -->
+
+
+
+<!--our feature section  -->
+<section class="features" id="features">
+	<h1 class="heading">our 
+		<span>features</span></h1>
+<div class="box-container">
+	<div class="box"><img src="image\orange.jpg" alt="Orange Image"><h3>Fresh And Organic</h3>
+		<p>Partner with local organic farmers to bring farm-fresh vegetables directly to your table.</p>
+		<a href="#" class="btn">read more</a>
+	</div>
+
+
+<div class="box"><img src="image\delivery.png" alt="Delivery Image"><h3>Free Delivery</h3>
+		<p>Ensure year-round availability of high-quality organic vegetables through smart sourcing and supply chain improvements.</p>
+		<a href="#" class="btn">read more</a>
+	</div>
+
+
+	<div class="box"><img src="image\payment.jpg" alt="Payment Image"><h3>Easy Payments</h3>
+		<p>Educate our customers on the benefits of organic eating through articles, recipes, and expert advice.
+			Implement eco-friendly packaging to reduce our environmental footprint.
+		</p>
+		<a href="#" class="btn">read more</a>
+	</div>
+
+</div>
+</section>
+<!--our feature section  -->
+
+
+<!--our production section  -->
+<section class="products" id="products">
+	<h1 class="heading"> our<span>products</span></h1> 
+</section>
+<!--our production section  -->
+
+<script src="js\script.js"></script>
+
+<div>
+	  <!-- Swiper -->
+	  <div class="swiper mySwiper">
+		<div class="swiper-wrapper">
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\gobhi1.jpg" alt="Gobhi Image"><h1>fresh cabbage</h1>
+			<div class="price">₹30/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh Banana" data-price="30" data-img="E:\grocery\image\gobhi1.jpg">Add to Cart</button>
+		</div></div>
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\banana1.jpg" alt="banana1 Image"><h1>fresh banana</h1>
+			<div class="price">₹35.99/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh Banana" data-price="35.99" data-img="E:/grocery/image/banana1.jpg">Add to Cart</button>
+		</div></div>
+		  
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\pineapple1.jpg" alt="Pineapple1 Image"><h1>fresh granny smith</h1>
+			<div class="price">₹80/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh granny smith" data-price="80" data-img="image\pineapple1.jpg" alt="Pineapple1 Image">Add to Cart</button>
+		</div></div>
+		  
+		<div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\redbhindi1.jpg" alt="redbhindi1 Image"><h1>Bell Pepper</h1>
+					<div class="price">₹50/-</div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Bell Pepper" data-price="50" data-img="image\redbhindi1.jpg" alt="redbhindi1 Image">Add to Cart</button>
+		</div>
+</div>
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\tamato1.jpg" alt="tamato1 Image"><h1>Fresh Cherry Tomato</h1>
+			<div class="price">₹30/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh Cherry Tomato" data-price="30" data-img="image\tamato1.jpg" alt="tamato1 Image">Add to Cart</button>
+		</div></div>
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\dryfood1.png" alt="Dryfood1 Image"><h1>Fresh Some-DryFood</h1>
+			<div class="price">₹200/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh Some-DryFood" data-price="200" data-img="image\dryfood1.png" alt="Dryfood1 Image">Add to Cart</button>
+		</div></div>
+		  <div class="swiper-slide"><div class="swiper-slider box">
+			<img src="image\watermelon1.jpg" alt="Watermelon1 Image"><h1>Fresh watermelon</h1>
+			<div class="price">₹99.99/-</div>
+			<div class="stars">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half"></i>
+			</div>
+			<!--<a href="#" class="btn">add to cart</a>-->
+			<button class="btn add-to-cart" data-title="Fresh watermelon" data-price="99.99" data-img="image\watermelon1.jpg" alt="Watermelon1 Image">Add to Cart</button>
+		</div></div>
+		</div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-pagination"></div>
+	  </div>
+	
+	  <!-- Swiper JS -->
+	  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	  <script>
+		let cartItems = [];
+		const cartContainer = document.getElementById("cart-container");
+	
+		function updateCart() {
+		  const boxes = cartContainer.querySelectorAll(".box");
+		  boxes.forEach(box => box.remove());
+	
+		  let total = 0;
+	
+		  cartItems.forEach(item => {
+			total += item.price * item.quantity;
+			const box = document.createElement('div');
+			box.classList.add('box');
+			box.innerHTML = `
+			  <i class="fa fa-trash" onclick="removeFromCart('${item.title}')"></i>
+			  <img src="${item.img}" />
+			  <div class="content">
+				<h3>${item.title}</h3>
+				<span class="price">₹${item.price.toFixed(2)}</span>
+				<span class="quantity">Qty: ${item.quantity}</span>
+			  </div>
+			`;
+			cartContainer.insertBefore(box, cartContainer.querySelector(".total"));
+		  });
+	
+		  cartContainer.querySelector(".total").textContent = `Total: ₹${total.toFixed(2)}`;
+		}
+	
+		function removeFromCart(title) {
+		  cartItems = cartItems.filter(item => item.title !== title);
+		  updateCart();
+		}
+	
+		document.querySelectorAll(".add-to-cart").forEach(btn => {
+		  btn.addEventListener("click", () => {
+			const title = btn.dataset.title;
+			const price = parseFloat(btn.dataset.price);
+			const img = btn.dataset.img;
+	
+			const existingItem = cartItems.find(item => item.title === title);
+			if (existingItem) {
+			  existingItem.quantity += 1;
+			} else {
+			  cartItems.push({ title, price, img, quantity: 1 });
+			}
+	
+			updateCart();
+		  });
+		});
+	  </script>
+	
+	  <!-- Initialize Swiper -->
+	  <script>
+		var swiper = new Swiper(".mySwiper", {
+		  spaceBetween: 30,
+		  centeredSlides: true,
+		  autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		  },
+		  pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		  },
+		  navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
+		});
+	  </script>
+</div>
+
+<!--our categories-->
+<section class="categories" id="categories">
+	<h1 class="heading"> Product <span>categoriess</span></h1>
+	
+	<div class="box-container">
+		<div class="box">
+			<img src="image\download1.jpg" alt="Download1 Image">
+			<h3>Vegetables</h3>
+			<p>Upto 45% Off</p>
+			<a href="#" class="btn">Shop now</a>
+		</div>
+
+		<div class="box">
+			<img src="image\cart51.jpg" alt="Cart51 Image">
+			<h3>Vegetables</h3>
+			<p>Upto 40% Off</p>
+			<a href="#" class="btn">Shop now</a>
+		</div>
+
+		<div class="box">
+			<img src="image\cart31.jpg" alt="Cart31 Image">
+			<h3>Vegetables</h3>
+			<p>Upto 45% Off</p>
+			<a href="#" class="btn">Shop now</a>
+		</div>
+
+		<div class="box">
+			<img src="image\cart41.png" alt="Cart41 Image">
+			<h3>fruits</h3>
+			<p>Upto 30% Off</p>
+			<a href="#" class="btn">Shop now</a>
+		</div>
+	</div> 
+</section>
+<!--our categories-->
+
+<!--our order section-->
+<section class="order" id="order">
+	<h1>Order<span>Now</span></h1>
+	<div class="order_main">
+		<div class="order_image">
+			<img src="image\order.svg" alt="">
+		</div>
+<!--<form action="#">-->
+	<form action="submit_order.php" method="POST">
+	<div class="input">
+		<p>Name</p>
+		<input type="text" name="name" placeholder="Your Name">
+	</div>
+	<div class="input">
+		<p>Email</p>
+		<input type="email" name="email" placeholder="Your Email">
+	</div>
+	<div class="input">
+		<p>Number</p>
+		<input type="number" name="number" placeholder="Your Number">
+	</div>
+	<div class="input">
+		<p>How Much</p>
+		<input type="number" name="quantity" placeholder="How many order">
+	</div>
+	<div class="input">
+		<p>Your Order</p>
+		<input type="text" name="product" placeholder="Product Name">
+	</div>
+	<div class="input">
+		<p>Address</p>
+		<input type="text" name="address" placeholder="Your Address">
+	</div>
+	<!--<a href="#Order" class="order_btn">Order Now</a>-->
+	<button type="submit" class="order_btn">Order Now</button>
+</form>
+	</div>
+</section>
+<!--our order section-->
+
+
+<!--our review section-->
+<section class="review" id="review">
+	<h1 class="heading"> Customer's <span>Review</span></h1>
+	<div class="review-slider">
+		<div class="swiper-slide">
+			<div class="box">
+				<img src="image\pic1.jpg" alt="Pic1 Image">
+				<p>this person gives me a feedback of my site. during the spent of time and duing some this.
+					 he is tells me about the feedback. he looks here.
+				</p>
+				<h3>John Deo</h3>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="image\pic22.jpg" alt="Pic22 Image">
+				<p>this person gives me a feedback of my site. during the spent of time and duing some this.
+					 he is tells me about the feedback. he looks here.
+				</p>
+				<h3>Heeri</h3>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="image\pic3.jpg" alt="Pic3 Image">
+				<p>this person gives me a feedback of my site. during the spent of time and duing some this.
+					 he is tells me about the feedback. he looks here.
+				</p>
+				<h3>monika rani</h3>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="image\pic1.jpg" alt="Pic1 Image">
+				<p>this person gives me a feedback of my site. during the spent of time and duing some this.
+					 he is tells me about the feedback. he looks here.
+				</p>
+				<h3>ram</h3>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--our review section-->
+
+<!--our blog section-->
+<section class="blogs" id="blogs">
+	<h1 class="heading"> Our <span>Blogs</span></h1>
+	<div class="box-container">
+		<div class="box">
+			<img src="image\tarnip.jpg" alt="Tarnip Image">
+			<div class="content">
+				<div class="icons">
+					<a href="#"><i class="fa fa-user"></i> By User</a>
+					<a href="#"><i class="fa fa-calendar"></i> 08 march,2025</a>
+				</div>
+				<h3>Easy and Healthy Recipes with Fresh Veggies</h3>
+				<p>Don’t know what to do with all those fresh vegetables? 
+				Check out these simple and delicious recipes that turn everyday ingredients into restaurant-style meals at home.</p>
+				<a href="#" class="btn">Read More</a>
+			</div>
+		</div>
+
+		<div class="box">
+			<img src="image\pruduct1.jpg" alt="Pruduct1 Image">
+			<div class="content">
+				<div class="icons">
+					<a href="#"><i class="fa fa-user"></i> By User</a>
+					<a href="#"><i class="fa fa-calendar"></i> 15 april,2025</a>
+				</div>
+				<h3>Fresh And Organic vegetables And Fruits</h3>
+				<p>Organic vegetables aren’t just a trend—they’re a lifestyle. In this post, we explore how going organic helps improve your health, 
+				supports local farmers, and protects the environment.</p>
+				<a href="#" class="btn">Read More</a>
+			</div>
+		</div>
+
+		<div class="box">
+			<img src="image\withsoil.jpg" alt="Withsoil Image">
+			<div class="content">
+				<div class="icons">
+					<a href="#"><i class="fa fa-user"></i> By User</a>
+					<a href="#"><i class="fa fa-calendar"></i> 6 may,2025 </a>
+				</div>
+				<h3>Smart Grocery Shopping Tips to Save Time and Money</h3>
+				<p>Shopping smart doesn’t mean shopping less—it means shopping better. Learn practical tips on how to make grocery lists, 
+				avoid impulse buying, and get the best value for your money.</p>
+				<a href="#" class="btn">Read More</a>
+			</div>
+		</div>
+	</div>
+</section>
+	<!--our blog section-->
+
+	<!--our footer section-->
+	<section class="footer">
+		<div class="box-container">
+			<div class="box">
+				<h3>Grocery <i class="fa fa-shopping-basket"></i></h3>
+				<p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Blow.</p>
+
+				<div class="share">
+					<a href="https://www.facebook.com" class="fa fa-facebook"></a>
+					<a href="https://www.instagram.com" class="fa fa-instagram"></a>
+					<a href="https://x.com" class="fa fa-twitter"></a>
+					<a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<h3>Contact Info</h3>
+				<a href="#" class="links"><i class="fa fa-phone"></i> +917668387139</a>
+				<a href="#" class="links"><i class="fa fa-phone"></i> +917668387139</a>
+				<a href="#" class="links"><i class="fa fa-envelope"></i> dk1554405@gmail.com</a>
+				<a href="https://www.google.co.in/maps/place/Mathura,+Uttar+Pradesh" class="links"><i class="fa fa-map-marker"></i>Mathura,India</a>
+			</div>
+
+			<div class="box">
+				<h3>Quick Links </h3>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Home</a>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Features</a>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Products</a>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Categories</a>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Review</a>
+				<a href="#" class="links"><i class="fa fa-arrow-right"></i>Blogs</a>
+			</div>
+			<div class="box">
+				<h3>Newsletter</h3>
+				<p>Subscribe For Latest Updates</p>
+				<form action="subscribe.php" method="POST">
+					<input type="email" name="email" placeholder="your email" class="email" required>
+					<input type="submit" value="Subscribe" class="btn">
+				</form>
+			</div>
+
+		</div>
+		<div class="credit">Created By <span>Devesh Kumar</span> | All Rights Reserved</div>
+	</section>
+	<!--our footer section-->
+</body>
+
+</html>
+
