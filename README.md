@@ -48,3 +48,4 @@ for managing online grocery shopping, built as a part of a college project. The 
    git clone https://github.com/grocery-shopping-system.git
    cd grocery-shopping-system
 http://localhost/grocery/index.html
+https://www.linkedin.com/in/devesh-kumar-4866b3294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
